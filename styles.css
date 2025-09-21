@@ -1,0 +1,163 @@
+/* ASVIDU SAMARASINGHE*/
+:root{
+  --page-bg: #f3d9bd;      /* body background */
+  --band-bg: #7b7b7b;      /* header/footer strip */
+  --nav-bg: #0026ff;       /* top nav base */
+  --card-mint: #98f5e1;    /* main card */
+  --sidebar-base: #79efdb; /* sidebar base */
+  --sidebar-hover: #22c55e;/* sidebar hover (green) */
+  --text: #111;
+}
+
+*{ box-sizing: border-box; }
+
+html, body{
+  height: 100%;
+}
+
+body{
+  margin: 0;
+  background: var(--page-bg);
+  color: var(--text);
+  font-family: "Trebuchet MS","Segoe UI",Tahoma,Arial,sans-serif; /* custom font */
+  line-height: 1.4;
+}
+
+/* Header & Footer */
+.band{
+  background: var(--band-bg);      /* different color than page */
+  color: #fff;
+  text-align: center;              /* centered text */
+  padding: 18px 12px;              /* padding */
+  margin: 12px 24px;               /* margin */
+  border-radius: 4px;
+}
+.band h1{
+  margin: 0;
+  letter-spacing: .5px;
+}
+
+/* Top Navigation */
+.topnav{
+  background: var(--nav-bg);
+  margin: 0 24px 16px;
+  border-radius: 4px;
+  overflow: hidden;                /* keep hover bg inside rounded corners */
+}
+.topnav ul{
+  list-style: none;                /* no bullets */
+  margin: 0;
+  padding: 0 8px;
+  display: flex;                   /* horizontal */
+  gap: 24px;
+}
+.topnav a{
+  display: block;
+  padding: 10px 8px;
+  color: #fff;
+  text-decoration: none;         
+  font-weight: 600;
+  border-radius: 3px;
+  transition: background .15s ease, color .15s ease;
+}
+.topnav a:hover{
+  background: red;                 /* hover → red */
+  color: #fff;
+}
+
+/* Two-Column Content */
+.content{
+  display: flex;                   /* keep main & sidebar on one line */
+  gap: 18px;
+  margin: 0 24px 18px;
+}
+
+/* Shared card look */
+.card{
+  border: 2px solid #6adabc;
+  border-radius: 6px;
+  padding: 16px;                 
+  background: var(--card-mint);
+}
+
+/* Main */
+.main{
+  width: 68%;
+}
+
+/* Sidebar */
+.sidebar{
+  width: 30%;
+  background: var(--sidebar-base);
+  transition: background .18s ease;
+}
+.sidebar:hover{
+  background: var(--sidebar-hover); /* hover → green */
+}
+
+/* Headings in panels */
+main h2{
+  margin: 4px 0 14px;
+}
+.sidebar h3{
+  margin: 4px 0 8px;
+}
+.sidebar h4{
+  margin: 10px 0 6px;
+}
+
+/* Form Styles */
+.rps-form{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px 12px;
+  align-items: center;
+  max-width: 560px;
+}
+
+.rps-form label{
+  font-weight: 600;
+}
+
+.rps-form input[type="text"]{
+  width: 180px;
+  padding: 6px 8px;
+  border: 1px solid #999;
+  border-radius: 4px;
+  transition: width .2s ease, box-shadow .2s ease;
+  background: #fff;
+}
+.rps-form input[type="text"]:focus{
+  width: 840px;                     
+  outline: none;
+  box-shadow: 0 0 0 2px #0ea5e9;
+}
+
+.rps-form select{
+  width: 140px;
+  padding: 6px 8px;
+  border: 1px solid #999;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.rps-form button{
+  grid-column: 2 / 3;
+  justify-self: start;
+  padding: 8px 14px;
+  border: 0;
+  border-radius: 4px;
+  background: #707070;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter .15s ease;
+}
+.rps-form button:hover{
+  filter: brightness(1.1);
+}
+
+@media (max-width: 800px){
+  .content{ flex-direction: column; }
+  .main, .sidebar{ width: 100%; }
+}
